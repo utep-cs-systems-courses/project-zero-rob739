@@ -22,7 +22,6 @@ void print_char_8x12(char c)
     {
       unsigned char  rowBits = font_8x12[c][row];
       for(char col = 0; col < 8; col++){
-	putchar('-');
 	unsigned char  colMask = 1 << (7-col);
 	putchar((rowBits & colMask) ? '*':' ');
       }
@@ -33,13 +32,13 @@ void print_char_8x12(char c)
 void print_char_8x12alt(char c)
 {
   c -=0x20;
-  for (char col = 0; col < 8; col++)
+  for (char col = 0; col < 8 ; col++)
     {
       unsigned char colMask = 1 << (7-col);
-      for ( row = 0; row < 12; row++)
+      for (char row = 11; row > -1; row--)
 	{
 	  unsigned char rowBits = font_8x12[c][row];
-	  putchar((rowBits & colMask) ? '*',' ');
+	  putchar((rowBits & colMask) ? '*':' ');
 	}
       putchar('\n');
     }

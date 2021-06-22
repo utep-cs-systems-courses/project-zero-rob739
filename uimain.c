@@ -22,7 +22,8 @@ int main()
       break;
     case'x':
       puts("You selected Chars 8x12alt");
-      print_char_8x12alt(c);
+      for(char c = 'A'; c < 'D'; c++)
+        print_char_8x12alt(c);
       break;
     case 'd':
       puts("You selected chars 8x12");
